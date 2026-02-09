@@ -1,0 +1,59 @@
+import { Router, Request, Response } from 'express';
+import multer from 'multer';
+import uploadConfig from './config/multer';
+import { CreateUserController } from './controllers/user/CreateUserController';
+import { validateSchema } from './middlewares/validateSchema';
+import { createUserSchema, authUserSchema } from './schemas/userSchema';
+import { authUserController } from './controllers/user/AuthUserSchema';
+import { DetailUserController } from './controllers/user/DetailUserController';
+import { isAuthenticated } from './middlewares/isAuthenticated'; 
+import { CreateCategoryController } from './controllers/category/CreateCategoryController';
+import { ListCategoryController } from './controllers/category/ListCategoryController';
+import { isAdmin } from "./middlewares/isAdmin";
+import { createCategorySchema } from './schemas/categorySchema';
+import { CreateProductController } from './controllers/product/CreateProductController';
+import { ListProductController } from './controllers/product/ListProductController';
+import { ListProductByCategoryController } from './controllers/product/ListProductByCategoryController';
+import { createProductSchema, listProductByCategorySchema, listProductSchema } from './schemas/productSchema';
+import { DeleteProductController } from './controllers/product/DeleteProductController';
+import { CreateOrderController } from './controllers/order/CreateOrderController';
+import { addItemSchema, createOrderSchema, detailOrderSchema, removeItemSchema, sendOrderSchema, finishOrderSchema, deleteOrderSchema } from './schemas/orderSchema';
+import { ListOrderController } from './controllers/order/listOrderControler';
+import { AddItemController } from './controllers/order/AdditemController';
+import { RemoveItemController } from './controllers/order/RemoveItemController';
+import { DetailOrderController } from './controllers/order/DetailOrderController';
+import { SendOrderController } from './controllers/order/SendOrderController';
+import { FinishOrderController } from './controllers/order/FinishOrderController';
+import { DeleteOrderController } from './controllers/order/DeleteOrderController';
+
+const router = Router();
+const upload = multer(uploadConfig);
+
+//rotas de user
+router.post("/users", validateSchema(createUserSchema), new CreateUserController().handle);
+router.post("/session", validateSchema(authUserSchema), new authUserController().handle);
+router.get("/me", isAuthenticated, new DetailUserController().handle);
+
+//Rotas category
+router.post("/category", isAuthenticated, isAdmin, validateSchema(createCategorySchema), new CreateCategoryController().handle);
+router.get("/category", isAuthenticated, new ListCategoryController().handle);
+
+//rotas product
+router.post("/product", isAuthenticated, isAdmin, upload.single("file"), validateSchema(createProductSchema),new CreateProductController().handle);
+router.get("/products", isAuthenticated, validateSchema(listProductSchema), new ListProductController().handle);
+router.get("/category/product", isAuthenticated, validateSchema(listProductByCategorySchema), new ListProductByCategoryController().handle);
+router.delete("/product", isAuthenticated, isAdmin, new DeleteProductController().handle);
+
+//rotas order
+router.post("/order", isAuthenticated, validateSchema(createOrderSchema), new CreateOrderController().handle);
+router.get("/orders", isAuthenticated, new ListOrderController().handle);
+
+//add item order
+router.post("/order/add", isAuthenticated, validateSchema(addItemSchema), new AddItemController().handle);
+router.delete("/order/remove", isAuthenticated, validateSchema(removeItemSchema), new RemoveItemController().handle);
+router.get("/order/detail", isAuthenticated, validateSchema(detailOrderSchema), new DetailOrderController().handle);
+router.put("/order/send", isAuthenticated, validateSchema(sendOrderSchema), new SendOrderController().handle);
+router.put("/order/finish", isAuthenticated, validateSchema(finishOrderSchema), new FinishOrderController().handle);
+router.delete("/order/delete", isAuthenticated, validateSchema(deleteOrderSchema), new DeleteOrderController().handle);
+
+export { router };

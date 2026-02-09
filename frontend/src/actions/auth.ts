@@ -1,0 +1,73 @@
+"use server";
+
+import { apiClient } from "@/lib/api";
+import { User, AuthResponse } from  '@/lib/types';
+import { setToken,removeToken } from '@/lib/auth'
+import { redirect } from "next/navigation";
+
+export async function registerAction(
+  prevState: { success: boolean; error: string } | null,
+  formData: FormData
+) {
+  try {
+    console.log("ACTION DISPARADA");
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const password = formData.get("password") as string;
+
+    const data = {
+      name,
+      email,
+      password,
+    };
+
+    console.log(data);
+
+    const user = await apiClient<User>("/users", {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
+
+    return { success: true, error: "", redirectTo: "/login" };
+  } catch (error) {
+    if (error instanceof Error) {
+      return { success: false, error: error.message };
+    }
+
+    return { success: false, error: "Erro ao criar conta" };
+  }
+}
+
+export async function loginAction(
+  prevState: { success: boolean; error: string } | null,
+  formData: FormData
+) {
+  try{
+    const email = formData.get("email") as string;
+    const password = formData.get("password") as string;
+
+    const data = {
+      email: email,
+      password: password,
+    };
+
+    const response = await apiClient<AuthResponse>("/session", {
+      method:"POST",
+      body: JSON.stringify(data),
+    });
+
+    await setToken(response.token);
+
+    return { success: true, error: "", redirectTo: "/dashboard" };
+  }catch(error){
+    if(error instanceof Error) {
+      return { success: false, error: error.message || "Erro ao fazer o login"}
+    }
+    return { success: false, error: "Erro ao fazer o login" };
+  }
+}
+
+export async function logoutAction(){
+  await removeToken();
+  redirect("/login")
+}
