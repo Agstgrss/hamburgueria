@@ -10,7 +10,7 @@ services:
       POSTGRES_PASSWORD: avengeda7x!
       POSTGRES_DB: hamburgueriadb
     ports:
-      - "5432:5432"
+      - "5434:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
@@ -18,7 +18,7 @@ services:
     build: ./backend
     container_name: hamburgueria_backend
     ports:
-      - "3333:3333"
+      - "3334:3333"
     depends_on:
       - db
     environment:
@@ -33,11 +33,11 @@ services:
     build: ./frontend
     container_name: hamburgueria_frontend
     ports:
-      - "3000:3000"
+      - "3001:3000"
     depends_on:
       - backend
     environment:
-      NEXT_PUBLIC_API_URL: http://localhost:3333
+      NEXT_PUBLIC_API_URL: http://3.142.119.138:3334
       API_URL: http://backend:3333
 
 volumes:
