@@ -1,12 +1,16 @@
+// frontend/src/app/login/page.tsx
 import { LoginForm } from "@/components/forms/login-form";
-import { getUser } from "@/lib/auth"
-import { redirect } from 'next/navigation'
+import { getUser } from "@/lib/auth";
+import { redirect } from "next/navigation";
+
+// ⚠️ Faz a página sempre SSR (dinâmica)
+export const dynamic = "force-dynamic";
 
 export default async function Login() {
     const user = await getUser();
 
-    if(user){
-        redirect("/dashboard")
+    if (user) {
+        redirect("/dashboard");
     }
 
     return (
@@ -19,4 +23,3 @@ export default async function Login() {
         </div>
     );
 }
-
