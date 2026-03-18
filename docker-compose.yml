@@ -1,0 +1,44 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:15
+    container_name: hamburgueria_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: avengeda7x!
+      POSTGRES_DB: hamburgueriadb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    container_name: hamburgueria_backend
+    ports:
+      - "3333:3333"
+    depends_on:
+      - db
+    environment:
+      PORT: 3333
+      DATABASE_URL: postgresql://postgres:avengeda7x!@db:5432/hamburgueriadb?schema=public
+      JWT_SECRET: 7b321d6d0fd7d9367564a2adb5550995
+      CLOUDINARY_CLOUD_NAME: dkfrd9yxe
+      CLOUDINARY_API_KEY: 118576134862657
+      CLOUDINARY_API_SECRET: eQCMFPJ-48q9w6-Bup1O3TaZRtg
+
+  frontend:
+    build: ./frontend
+    container_name: hamburgueria_frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:3333
+      API_URL: http://backend:3333
+
+volumes:
+  postgres_data:
