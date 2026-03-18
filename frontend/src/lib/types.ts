@@ -57,5 +57,5 @@ export interface Order{
     status: boolean;
     draft: boolean;
     cratedAt: string;
-    items?: items[];
+    items?: Items[];
 }
