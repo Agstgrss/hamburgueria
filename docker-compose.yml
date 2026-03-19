@@ -29,16 +29,5 @@ services:
       CLOUDINARY_API_KEY: 118576134862657
       CLOUDINARY_API_SECRET: eQCMFPJ-48q9w6-Bup1O3TaZRtg
 
-  frontend:
-    build: ./frontend
-    container_name: hamburgueria_frontend
-    ports:
-      - "3001:3000"
-    depends_on:
-      - backend
-    environment:
-      NEXT_PUBLIC_API_URL: http://3.142.119.138:3334
-      API_URL: http://backend:3333
-
 volumes:
   postgres_data:
