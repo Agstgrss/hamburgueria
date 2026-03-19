@@ -7,9 +7,10 @@
     "node": ">=22.12"
   },
   "scripts": {
-    "dev": "tsx watch src/server.ts",
-    "start": "tsx src/server.ts",
-    "postinstall": "prisma generate"
+    "dev": "ts-node-dev src/server.ts",
+    "start": "ts-node src/server.ts",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev --name init"
   },
   "keywords": [],
   "author": "",
