@@ -65,7 +65,7 @@ export function LoginForm() {
                     )}
 
                     <p className="text-white text-sm text-gray-100">
-                        Ainda não possui uma conta?
+                        Ainda não possui uma conta ? 
                         <Link href="/register" className="text-brand-primary font-semibold">
                             Crie uma conta
                         </Link>
