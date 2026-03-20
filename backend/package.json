@@ -7,7 +7,7 @@
     "node": ">=22.12"
   },
   "scripts": {
-    "start": "npx ts-node src/server.ts",
+    "start": "npx prisma generate && npx ts-node src/server.ts",
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev --name init"
