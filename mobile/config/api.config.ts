@@ -1,6 +1,6 @@
-
+//local BASE_URL: "http://localhost:3334",
 
 export const API_CONFIG = {
-    BASE_URL: "http://192.168.18.4:3333",
+    BASE_URL: "http://localhost:3333",
     TIMEOUT: 12000, 
 }

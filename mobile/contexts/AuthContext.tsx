@@ -48,7 +48,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   async function signIn(email: string, password: string) {
     try {
-      alert("Entrando...");
       const response = await api.post<LoginResponse>("/session", {
         email: email,
         password: password,

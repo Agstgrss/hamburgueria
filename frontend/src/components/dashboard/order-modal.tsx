@@ -59,6 +59,13 @@ export function OrderModal({ onClose, orderId, token }: OrderModalProps) {
         await onClose();
     };
 
+    const formatPrice = (value: number) => {
+        return new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+        }).format(value / 100);
+    };
+
     const calculateTotal = () => {
         if (!order?.items) return 0;
         return order.items.reduce((total, item) => {
@@ -147,10 +154,10 @@ export function OrderModal({ onClose, orderId, token }: OrderModalProps) {
                                             </div>
                                             <div className="text-right">
                                                 <p className="font-semibold text-white">
-                                                    R$ {(item.product.price * item.amount).toFixed(2)}
+                                                    {formatPrice(item.product.price * item.amount)}
                                                 </p>
                                                 <p className="text-xs text-gray-400">
-                                                    R$ {item.product.price.toFixed(2)} un.
+                                                    {formatPrice(item.product.price)} un.
                                                 </p>
                                             </div>
                                         </div>
@@ -172,7 +179,7 @@ export function OrderModal({ onClose, orderId, token }: OrderModalProps) {
                             <div className="flex justify-between text-lg font-bold">
                                 <span className="text-white">Total:</span>
                                 <span className="text-white">
-                                    R$ {calculateTotal().toFixed(2)}
+                                    {formatPrice(calculateTotal())}
                                 </span>
                             </div>
                         </div>
