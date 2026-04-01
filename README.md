@@ -3,6 +3,9 @@
 **Visão geral rápida**: esta monorepo entrega o sistema completo de atendimento de uma hamburgueria — API RESTful com autenticação JWT e controle por roles, painel web administrativo construído com Next.js 16 e aplicativo mobile para garçons com Expo Router. O backend orquestra usuários, categorias, produtos e pedidos e é consumido simultaneamente pelos dois clientes. O histórico técnico e os endpoints estão documentados em `backend/contexto_projeto.md:1` e `backend/endpoints.md:1`.
 
 Link para o proprietario: https://hamburgueria-olive-eta.vercel.app/login
+
+<br>
+
 Link para o app do garçom: https://hamburgueria-uara.vercel.app/dashboard
 
 ## Tecnologias principais
