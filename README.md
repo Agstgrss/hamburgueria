@@ -9,6 +9,7 @@ https://hamburgueria-olive-eta.vercel.app/login
 
 E para o garçom, que irá criar a mesa e adicionar os produtos.
 Link para o app do garçom:
+<br>
 https://hamburgueria-uara.vercel.app/dashboard
 
 ## Tecnologias principais
