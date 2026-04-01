@@ -16,7 +16,7 @@ Email: adminadmin@gmail.com
 <br>
 Password: adminadmin
 <br>
----
+
 E para o garçom, que irá criar a mesa e adicionar os produtos.
 <br>
 <br>
@@ -24,7 +24,6 @@ Link para o app do garçom:
 <br>
 https://hamburgueria-uara-git-main-agstgrss-projects.vercel.app
 
----
 ## Tecnologias principais
 - **Backend**: Node.js >=22.12, Express 5, Prisma ORM, PostgreSQL e Cloudinary para imagens. Segurança com JWT e bcryptjs. Veja `backend/package.json:1`.
 - **Frontend Web**: Next.js 16 + React 19 com Server Components, cookies armazenam o token (`cookies()` em `frontend/src/lib/auth.ts`). Requisições apontam para `API_URL`/`NEXT_PUBLIC_API_URL` (`frontend/.env.example:1`).
