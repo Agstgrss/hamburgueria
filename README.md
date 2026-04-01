@@ -2,7 +2,7 @@
 
 **Visão geral rápida**: esta monorepo entrega o sistema completo de atendimento de uma hamburgueria — API RESTful com autenticação JWT e controle por roles, painel web administrativo construído com Next.js 16 e aplicativo mobile para garçons com Expo Router. O backend orquestra usuários, categorias, produtos e pedidos e é consumido simultaneamente pelos dois clientes. O histórico técnico e os endpoints estão documentados em `backend/contexto_projeto.md:1` e `backend/endpoints.md:1`.
 
-Existe o sistema da hamburgueria para o administrador, onde é possivle criar produtos e visualizar pedidos.
+Existe o sistema da hamburgueria para o administrador, onde é possivel criar produtos e visualizar pedidos, também é possivel criar a conta do garçon.
 <br>
 <br>
 Link para o proprietario:
@@ -17,7 +17,7 @@ Email: adminadmin@gmail.com
 Password: adminadmin
 <br>
 
-E para o garçom, que irá criar a mesa e adicionar os produtos.
+Para o garçom, utilize a conta que criou no app do adminstrador, aqui você poderá criar a mesa e adicionar os produtos, simulando o que o garçon faria em seu proprio App
 <br>
 <br>
 Link para o app do garçon:
