@@ -10,7 +10,7 @@ https://hamburgueria-olive-eta.vercel.app/login
 E para o garçom, que irá criar a mesa e adicionar os produtos.
 Link para o app do garçom:
 <br>
-https://hamburgueria-uara.vercel.app/dashboard
+https://hamburgueria-uara-git-main-agstgrss-projects.vercel.app/login
 
 ## Tecnologias principais
 - **Backend**: Node.js >=22.12, Express 5, Prisma ORM, PostgreSQL e Cloudinary para imagens. Segurança com JWT e bcryptjs. Veja `backend/package.json:1`.
