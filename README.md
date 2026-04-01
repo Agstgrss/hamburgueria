@@ -20,7 +20,7 @@ Password: adminadmin
 E para o garçom, que irá criar a mesa e adicionar os produtos.
 <br>
 <br>
-Link para o app do garçom:
+Link para o app do garçon:
 <br>
 https://hamburgueria-uara-git-main-agstgrss-projects.vercel.app
 
