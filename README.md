@@ -2,6 +2,7 @@
 
 **Visão geral rápida**: esta monorepo entrega o sistema completo de atendimento de uma hamburgueria — API RESTful com autenticação JWT e controle por roles, painel web administrativo construído com Next.js 16 e aplicativo mobile para garçons com Expo Router. O backend orquestra usuários, categorias, produtos e pedidos e é consumido simultaneamente pelos dois clientes. O histórico técnico e os endpoints estão documentados em `backend/contexto_projeto.md:1` e `backend/endpoints.md:1`.
 
+---
 Existe o sistema da hamburgueria para o administrador, onde é possivle criar produtos e visualizar pedidos.
 <br>
 <br>
@@ -16,7 +17,7 @@ Email: adminadmin@gmail.com
 <br>
 Password: adminadmin
 <br>
-
+---
 E para o garçom, que irá criar a mesa e adicionar os produtos.
 <br>
 <br>
@@ -24,6 +25,7 @@ Link para o app do garçom:
 <br>
 https://hamburgueria-uara-git-main-agstgrss-projects.vercel.app
 
+---
 ## Tecnologias principais
 - **Backend**: Node.js >=22.12, Express 5, Prisma ORM, PostgreSQL e Cloudinary para imagens. Segurança com JWT e bcryptjs. Veja `backend/package.json:1`.
 - **Frontend Web**: Next.js 16 + React 19 com Server Components, cookies armazenam o token (`cookies()` em `frontend/src/lib/auth.ts`). Requisições apontam para `API_URL`/`NEXT_PUBLIC_API_URL` (`frontend/.env.example:1`).
