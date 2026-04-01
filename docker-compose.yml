@@ -6,9 +6,9 @@ services:
     container_name: hamburgueria_db
     restart: always
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: avengeda7x!
-      POSTGRES_DB: hamburgueriadb
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     ports:
       - "5434:5432"
     volumes:
@@ -22,7 +22,7 @@ services:
     depends_on:
       - db
     env_file:
-    - ./backend/.env
+      - ./backend/.env
 
   frontend:
     build: ./frontend
