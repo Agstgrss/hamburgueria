@@ -8,9 +8,9 @@ https://hamburgueria-olive-eta.vercel.app/login
 
 tente
 <br>
-"adminadmin@gmail.com"
+Email:adminadmin@gmail.com
 <br>
-"adminadmin"
+Passowrd:adminadmin
 <br>
 
 E para o garçom, que irá criar a mesa e adicionar os produtos.
