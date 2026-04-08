@@ -11,7 +11,7 @@ Existe o sistema da hamburgueria para o administrador, onde é possivel criar pr
 <br>
 Link para o sistema de adminsitração:
 <br>
-https://hamburgueria-olive-eta.vercel.app/login
+https://hamburgueria-olive-eta.vercel.app/
 <br>
 <br>
 tente
