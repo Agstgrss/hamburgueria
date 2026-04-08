@@ -56,7 +56,7 @@ class CreateProductService {
 
         } catch (error) {
             console.log("Erro ao fazer o upload para o Cloudinary:", error);
-            throw new Error("Erro ao fazer o upload da imagem");
+            throw new Error("Erro ao fazer o upload da imagem_");
         }
 
         const product = await prismaClient.product.create({
