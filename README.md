@@ -9,7 +9,7 @@
 Existe o sistema da hamburgueria para o administrador, onde é possivel criar produtos e visualizar e finalizar pedidos, também é possivel criar a conta do garçon.
 <br>
 <br>
-Link para o proprietario:
+Link para o sistema de adminsitração:
 <br>
 https://hamburgueria-olive-eta.vercel.app/login
 <br>
@@ -21,7 +21,7 @@ Email: adminadmin@gmail.com
 Password: adminadmin
 <br>
 
-Para o garçom, utilize a conta que criou no app do adminstrador, aqui você poderá criar a mesa e adicionar os produtos, simulando o que o garçon faria em seu proprio App
+Para o garçon, utilize a conta que criou no app do adminstrador, aqui você poderá criar a mesa e adicionar os produtos, simulando o que o garçon faria em seu proprio App
 <br>
 <br>
 Link para o app do garçon:
