@@ -6,7 +6,7 @@
 
 **Testando Online**
 
-Existe o sistema da hamburgueria para o administrador, onde é possivel criar produtos e visualizar pedidos, também é possivel criar a conta do garçon.
+Existe o sistema da hamburgueria para o administrador, onde é possivel criar produtos e visualizar e finalizar pedidos, também é possivel criar a conta do garçon.
 <br>
 <br>
 Link para o proprietario:
