@@ -26,7 +26,7 @@ Para o garçon, utilize a conta que criou no app do adminstrador, aqui você pod
 <br>
 Link para o app do garçon:
 <br>
-https://hamburgueria-uara-git-main-agstgrss-projects.vercel.app
+https://hamburgueria-uara.vercel.app/
 
 ---
 
