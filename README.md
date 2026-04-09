@@ -24,7 +24,8 @@ Password: adminadmin
 Para o garçon, utilize a conta que criou no app do adminstrador, aqui você poderá criar a mesa e adicionar os produtos, simulando o que o garçon faria em seu proprio App
 <br>
 <br>
-Link para o app do garçon:
+
+**Link para o app do garçon**:
 <br>
 https://hamburgueria-uara.vercel.app/
 
