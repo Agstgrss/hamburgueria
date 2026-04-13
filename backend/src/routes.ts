@@ -16,6 +16,7 @@ import { ListProductController } from './controllers/product/ListProductControll
 import { ListProductByCategoryController } from './controllers/product/ListProductByCategoryController';
 import { createProductSchema, listProductByCategorySchema, listProductSchema } from './schemas/productSchema';
 import { DeleteProductController } from './controllers/product/DeleteProductController';
+import { UpdateProductController } from './controllers/product/UpdateProductController';
 import { CreateOrderController } from './controllers/order/CreateOrderController';
 import { addItemSchema, createOrderSchema, detailOrderSchema, removeItemSchema, sendOrderSchema, finishOrderSchema, deleteOrderSchema } from './schemas/orderSchema';
 import { ListOrderController } from './controllers/order/listOrderControler';
@@ -40,6 +41,7 @@ router.get("/category", isAuthenticated, new ListCategoryController().handle);
 
 //rotas product
 router.post("/product", isAuthenticated, isAdmin, upload.single("file"), validateSchema(createProductSchema),new CreateProductController().handle);
+router.put("/product", isAuthenticated, isAdmin, upload.single("file"), new UpdateProductController().handle);
 router.get("/products", isAuthenticated, validateSchema(listProductSchema), new ListProductController().handle);
 router.get("/category/product", isAuthenticated, validateSchema(listProductByCategorySchema), new ListProductByCategoryController().handle);
 router.delete("/product", isAuthenticated, isAdmin, new DeleteProductController().handle);
