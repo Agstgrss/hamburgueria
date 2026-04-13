@@ -6,13 +6,14 @@ interface CreateUserProps{
     name: string;
     email: string;
     password: string;
+    role?: "ADMIN" | "STAFF";
 }
 
 class CreateUserService {
-    async execute({ name, email, password} : CreateUserProps){
+    async execute({ name, email, password, role = "STAFF" } : CreateUserProps){
 
         console.log("CreateUserService")
-        console.log("name, email e password", name, email, password)
+        console.log("name, email, password e role", name, email, password, role)
         
         const userAlreadyExists = await prismaClient.user.findFirst({
             where:{
@@ -31,6 +32,7 @@ class CreateUserService {
                 name: name,
                 email: email,
                 password: passwordHash,
+                role: role,
             },
             select:{
                 id: true,
