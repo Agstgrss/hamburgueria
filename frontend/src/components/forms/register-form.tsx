@@ -63,6 +63,32 @@ export function RegisterForm() {
                             minLength={3}
                             className="text-white bg-app-card border border-app-border"/>
                     </div>
+                    <div className="space-y-2">
+                        <Label className="text-white">Tipo de Conta</Label>
+                        <div className="space-y-2 pl-2">
+                            <div className="flex items-center">
+                                <input
+                                    type="radio"
+                                    id="staff"
+                                    name="role"
+                                    value="STAFF"
+                                    defaultChecked
+                                    className="w-4 h-4 accent-brand-primary cursor-pointer"
+                                />
+                                <Label htmlFor="staff" className="text-white ml-2 cursor-pointer font-normal">Staff</Label>
+                            </div>
+                            <div className="flex items-center">
+                                <input
+                                    type="radio"
+                                    id="admin"
+                                    name="role"
+                                    value="ADMIN"
+                                    className="w-4 h-4 accent-brand-primary cursor-pointer"
+                                />
+                                <Label htmlFor="admin" className="text-white ml-2 cursor-pointer font-normal">Administrador</Label>
+                            </div>
+                        </div>
+                    </div>
                     <Button 
                         type="submit" 
                         className="w-full bg-brand-primary text-white">
