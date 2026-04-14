@@ -26,6 +26,9 @@ export function LoginForm() {
                 <CardTitle className="text-white text-center text-3xl sm:text-4xl font-bold w-full leading-tight">
                     <span className="block">Augusto</span>
                     <span className="block text-brand-primary">Hamburgueria</span>
+                      <span className="block text-brand-primary text-xl sm:text-2xl font-normal opacity-80">
+                        Administração
+                    </span>
                 </CardTitle>
             </CardHeader>
             <CardContent>
