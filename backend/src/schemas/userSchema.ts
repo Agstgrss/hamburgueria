@@ -10,6 +10,9 @@ export const createUserSchema = z.object({
         password: z
             .string()
             .min(6, { message: "A senha deve ter no minimo 6 caracteres"}),
+        role: z
+            .enum(["ADMIN", "STAFF"], { message: "Role deve ser ADMIN ou STAFF"})
+            .default("STAFF"),
     }),
 });
 

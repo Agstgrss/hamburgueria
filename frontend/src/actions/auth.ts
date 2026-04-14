@@ -14,11 +14,13 @@ export async function registerAction(
     const name = formData.get("name") as string;
     const email = formData.get("email") as string;
     const password = formData.get("password") as string;
+    const role = (formData.get("role") as string) || "STAFF";
 
     const data = {
       name,
       email,
       password,
+      role,
     };
 
     console.log(data);
