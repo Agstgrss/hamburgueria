@@ -31,6 +31,34 @@ export async function createProductAction(formData: FormData) {
     }
 }
 
+export async function updateProductAction(formData: FormData, productId: string) {
+    try {
+        const token = await getToken();
+
+        if (!token) {
+            return { success: false, error: "Erro ao editar produto" };
+        }
+
+        formData.set("product_id", productId);
+
+        const result = await apiClient<Product>("/product", {
+            method: "PUT",
+            body: formData,
+            token: token,
+        });
+
+        revalidatePath("/dashboard/products");
+
+        return { success: true, error: "", data: result };
+    } catch (error) {
+        if (error instanceof Error) {
+            return { success: false, error: error.message };
+        }
+
+        return { success: false, error: "Erro ao editar produto" };
+    }
+}
+
 export async function deleteProductAction(productId: string) {
     try {
         if(!productId){

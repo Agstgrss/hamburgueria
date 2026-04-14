@@ -31,6 +31,17 @@ class CreateProductService {
             throw new Error("Categoria não existe");
         }
 
+        const productExists = await prismaClient.product.findFirst({
+            where:{
+                name: name,
+                disabled: false
+            }
+        });
+
+        if(productExists){
+            throw new Error("Já existe um produto com este nome");
+        }
+
         let bannerUrl = "";
 
         try {
