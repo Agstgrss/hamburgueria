@@ -30,6 +30,12 @@ import { DeleteOrderController } from './controllers/order/DeleteOrderController
 const router = Router();
 const upload = multer(uploadConfig);
 
+router.get("/users", (req, res) => {
+  return res.json({
+    message: "rota GET /users funcionando 🚀"
+  });
+});
+
 //rotas de user
 router.post("/users", validateSchema(createUserSchema), new CreateUserController().handle);
 router.post("/session", validateSchema(authUserSchema), new authUserController().handle);
