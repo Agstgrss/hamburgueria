@@ -21,8 +21,8 @@ app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
     });
 });
 
-const PORT = process.env.PORT! || 3333;
+const PORT = process.env.PORT || 3333;
 
-app.listen(PORT, () => {
+app.listen(Number(PORT), "0.0.0.0", () => {
     console.log("Servidor rodando na porta " + PORT);
 });
