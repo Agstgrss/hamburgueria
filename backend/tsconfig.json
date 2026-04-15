@@ -4,14 +4,13 @@
     "module": "commonjs",
     "lib": ["ES2020"],
     "moduleResolution": "node",
+
+    "rootDir": "src",
+    "outDir": "dist",
+
     "types": ["node", "express"],
     "typeRoots": ["./src/@types", "./node_modules/@types"],
-    
-    // Diretórios
-    "outDir": "./dist",
-    "rootDir": "./src",
 
-    // Strict Type-Checking Options
     "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
@@ -21,36 +20,29 @@
     "noImplicitThis": true,
     "alwaysStrict": true,
 
-    // **Removendo conflito**
     "noUnusedLocals": false,
     "noUnusedParameters": false,
 
-    // Additional Checks
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": false,
 
-    // Module Resolution
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
 
-    // Emit
     "declaration": false,
     "declarationMap": false,
     "sourceMap": true,
     "removeComments": true,
     "importHelpers": false,
 
-    // Interop Constraints
     "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true,
-
+    "skipLibCheck": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"]
-  
 }
