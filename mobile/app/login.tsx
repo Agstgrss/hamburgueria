@@ -23,15 +23,18 @@ export default function Login() {
   const router = useRouter();
 
   async function handleLogin() {
+    console.log("handleLogin");
 
     if(!email.trim()  || !password.trim()){
         Alert.alert("Atenção", "Preencha todos os campos!");
+        console.log("Preencha todos os campos!");
         return;
     }
 
     try{
         setLoading(true);
         await signIn(email, password)
+        console.log("await signIn", email, password);
         router.replace("/(authenticated)/dashboard")
     }catch(err){
         Alert.alert("ERRO", "Erro ao fazer o login");
